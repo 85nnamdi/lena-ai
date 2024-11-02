@@ -12,8 +12,8 @@ export default function Footer() {
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h4 className="text-lg font-semibold mb-2">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
+              <li><a href="http://localhost:3000/" className="text-gray-400 hover:text-white">Home</a></li>
+              <li><a href="https://github.com/lena-ai" className="text-gray-400 hover:text-white">About Us</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Pricing</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
             </ul>
@@ -21,10 +21,10 @@ export default function Footer() {
           <div className="w-full md:w-1/3">
             <h4 className="text-lg font-semibold mb-2">Connect With Us</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white">Twitter</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Facebook</a></li>
+              <li><a href="https://localhost:3000" className="text-gray-400 hover:text-white">Twitter</a></li>
+              <li><a href="https://localhost:3000" className="text-gray-400 hover:text-white">Facebook</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white">LinkedIn</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white">Instagram</a></li>
+              <li><a href="https://github.com/lena-ai" className="text-gray-400 hover:text-white">Instagram</a></li>
             </ul>
           </div>
         </div>

@@ -1,15 +1,31 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
 
 export default function ImageGenerator() {
   const [prompt, setPrompt] = useState('');
   const [generatedImage, setGeneratedImage] = useState('');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement API call to generate image
-    setGeneratedImage('/placeholder.svg?height=300&width=300');
-  };
+    
+    try {
+      // Fetch the image as a blob
+      const response = await Axios.post(
+        `${process.env.REACT_APP_API_BASE}/serverless-image-generation/`,
+        { prompt },
+        { responseType: 'blob' } // Ensure response is received as blob
+      );
 
+      // Convert blob to base64 data URL
+      const reader = new FileReader();
+      reader.readAsDataURL(response.data);
+      reader.onloadend = () => {
+        setGeneratedImage(reader.result); // Set the base64 URL as image source
+      };
+    } catch (error) {
+      console.error("Image generation failed:", error);
+    }
+  };
   return (
     <div className="bg-white p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4">Image Generator</h2>

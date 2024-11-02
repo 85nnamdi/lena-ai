@@ -25,6 +25,7 @@ async def text_to_image(prompt: str):
 
 @router.post("/flux-image-generation/")
 async def image_generation(prompt: str):
+    print(prompt)
     try:
         image = generate_image(prompt)
         buffer = BytesIO()
@@ -38,7 +39,8 @@ async def image_generation(prompt: str):
 
 
 @router.post("/serverless-image-generation/")
-async def serverless_image_generation(prompt: str):
+async def serverless_image_generation(request: ImageRequest):
+    prompt = request.prompt
     try:
         image = generate_image_serverless(prompt)
         

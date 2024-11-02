@@ -32,7 +32,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
-      <Router>
+      
         <div className="flex flex-col min-h-screen bg-gray-100">
           <Header />
           <div className="flex flex-1">
@@ -52,7 +52,6 @@ function App() {
           </div>
           <Footer />
         </div>
-      </Router>
     </AuthContext.Provider>
   );
 }
